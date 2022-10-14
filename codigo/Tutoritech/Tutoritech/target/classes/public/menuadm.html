@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Controle de Dados</title>
+	<meta content="text/html; charset = UTF-8" http-equiv="content-type">
+</head>
+	
+<body>
+	<h1>
+		Administrar dados:
+	</h1>
+	<p>
+		<button onclick="categoria()">
+			Categorias
+		</button>
+	</p>
+	<p>
+		<button onclick="admin()">
+			Administradores
+		</button>
+	</p>
+	<p>
+		<button onclick="usuario()">
+			Usuarios
+		</button>
+	</p>
+	<p>
+		<button onclick="tutorial()">
+			Tutoriais
+		</button>
+	</p>
+	
+	<script>
+		function categoria (){
+			window.location = "/categoria/list/1";
+		}
+		
+		function admin (){
+			window.location = "/admin/list/1";
+		}
+		
+		function usuario (){
+			window.location = "/usuario/list/1";
+		}
+		
+		function tutorial (){
+			window.location = "/tutorial/list/1";
+		}
+	</script>
+</body>
+</html>
