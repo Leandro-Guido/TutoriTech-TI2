@@ -19,22 +19,22 @@
         <div class="container-fluid cabecalho">
             <div class="row">
                 <div class="col-6">
-                    <a href="/frontend/inicio-login/inicio.html"> <img class="imagemprovisoria" src="logo.png" alt=""> </a>
+                    <a href="/frontend/inicio-login/inicio"> <img class="imagemprovisoria" src="logo.png" alt=""> </a>
                 </div>
-
-                    <div class="col-6" id="nomeUsuario">
-                        <div id="insertSair">
-                            
-                        </div>
-                    </div>
-
+                <div class="col-6" id="nomeUsuario">
+					<div id="insertSair">
+                    	<inserir-sair>
+                	</div>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
         <!-- nao usar alem dessa pagina -->
-        <button onclick="sairEVoltar()" class="custom-btn btn-13" id="botaoVoltar">Voltar</button>
+        <a href="/frontend/inicio-login/inicio">
+        	<button class="custom-btn btn-13" id="botaoVoltar">Voltar</button>
+        </a>
         <div class="container">
             
             <div class="row">
@@ -54,8 +54,11 @@
             </div>
         </div>
         <div id="acontato">
-                    <a class="Contato" href="/frontend/EntreEmContato/contato.html">Entre em contato</a>
+                    <a class="Contato" href="/frontend/EntreEmContato/contato">Entre em contato</a>
         </div>
+            <div class="bot-area">
+    		<button onclick="abrirBot()" id="bot-nome" style="color:#ffffff; margin-bottom: 22px">Suporte do TutoriTech</button>
+    	</div>
     </main>
 
     <footer class="container">

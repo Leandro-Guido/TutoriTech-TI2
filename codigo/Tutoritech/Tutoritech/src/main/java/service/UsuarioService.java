@@ -1,6 +1,7 @@
 package service;
 
 import java.util.Scanner;
+
 import java.io.File;
 import java.util.List;
 import dao.UsuarioDAO;
@@ -19,7 +20,6 @@ public class UsuarioService {
 	private final int FORM_ORDERBY_EMAIL = 1;
 	private final int FORM_ORDERBY_NOME = 2;
 	
-	
 	public UsuarioService() {
 		makeForm();
 	}
@@ -28,7 +28,6 @@ public class UsuarioService {
 	public void makeForm() {
 		makeForm(FORM_INSERT, new Usuario(), FORM_ORDERBY_NOME);
 	}
-
 	
 	public void makeForm(int orderBy) {
 		makeForm(FORM_INSERT, new Usuario(), orderBy);
@@ -119,8 +118,8 @@ public class UsuarioService {
 		} else {
 			System.out.println("ERRO! Tipo não identificado " + tipo);
 		}
-		form = form.replaceFirst("<UM-USUARIO>", umUsuario);
 		
+		form = form.replaceFirst("<UM-USUARIO>", umUsuario);
 		String list = new String("<table width=\"80%\" align=\"center\" bgcolor=\"#f3f3f3\">");
 		list += "\n<tr><td colspan=\"6\" align=\"left\"><font size=\"+2\"><b>&nbsp;&nbsp;&nbsp;Relação de Usuarios</b></font></td></tr>\n" +
 				"\n<tr><td colspan=\"6\">&nbsp;</td></tr>\n" +
@@ -217,7 +216,6 @@ public class UsuarioService {
 		return form;
 	}
 	
-	
 	public Object getAll(Request request, Response response) {
 		int orderBy = Integer.parseInt(request.params(":orderby"));
 		makeForm(orderBy);
@@ -230,7 +228,7 @@ public class UsuarioService {
         String email = request.params(":email");
         
 		Usuario usuario = usuarioDAO.getByPK(email);
-        String resp = "";       
+        String resp = "";
 
         if (usuario != null) {
         	usuario.setEmail(request.queryParams("email"));

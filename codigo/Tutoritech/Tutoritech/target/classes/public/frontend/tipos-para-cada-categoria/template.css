@@ -108,3 +108,23 @@ a.Contato{
     width:150px;
     position: relative;
 }
+
+@media screen and (max-width: 600px) {
+    #btn-area .btn-13{
+        min-width: 300px;
+        max-height: 100px;
+        margin: 10px;
+    }
+} 
+
+@media screen and (max-width: 340px) {
+    #btn-area .btn-13{
+        min-width: 180px;
+        max-height: 100px;
+        margin: 10px;
+    }
+
+    #title{
+        font-size: 40px;
+    }
+}

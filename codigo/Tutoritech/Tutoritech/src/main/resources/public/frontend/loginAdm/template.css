@@ -1,3 +1,4 @@
+
 header{
     background-color: rgb(133, 26, 133);
     height: 80px;
@@ -30,7 +31,7 @@ header{
 
 
 body {
-    background: #e0e5ec;
+    background: #e0e5ec !important;
 }
 p {
   color: #676767;

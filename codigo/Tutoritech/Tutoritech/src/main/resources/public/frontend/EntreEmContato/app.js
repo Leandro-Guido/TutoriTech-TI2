@@ -2,34 +2,15 @@ function goBack() {
     window.history.back()
 }
 
-function logoutUser () {
-    usuarioCorrente = {};
-    sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
-    window.location = LOGIN_URL;
-}
+  	
+  	function abrirBot() {
+		document.querySelector(".bot-area").innerHTML = ` <button onclick="fecharBot()" id="bot-nome" style="color:#ffffff; margin-bottom: 5px">Suporte do TutoriTech</button>
+    	<iframe id="bot" src="https://getacquainted.co/widget/c682c457-3206-4784-b93f-f26a0c0499c9"
+    	style="border:0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="0"
+    	marginheight="0px" marginwidth="0px" height="350px" width="300px" allowfullscreen></iframe>`;
+	}
+	
+	function fecharBot() {
+		document.querySelector(".bot-area").innerHTML = ` <button onclick="abrirBot()" id="bot-nome" style="color:#ffffff; margin-bottom: 22px">Suporte do TutoriTech</button>`;
+	}
 
-colocarSair();
-
-//apenas para pagina que podem ser acessadas com ou sem login
-function colocarSair(){
-    let tipo = JSON.parse(sessionStorage.getItem('usuarioCorrente')).tipo;
-    let nomeUsu = "";
-
-    let textoNome;
-    
-    if (tipo == "user")
-    {
-        nomeUsu = JSON.parse(sessionStorage.getItem('usuarioCorrente')).nome;
-    } else if (tipo == "adm")
-    {
-        nomeUsu = JSON.parse(sessionStorage.getItem('usuarioCorrente')).usuario;
-    }
-
-    textoNome = `<p>${nomeUsu} | <a onclick="logoutUser()" href="/frontend/inicio-login/login.html">Sair</a></p>`;
-
-    if( nomeUsu )
-    {
-        document.querySelector('#insertSair').innerHTML = textoNome;
-    }
-
-}
