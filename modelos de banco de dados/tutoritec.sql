@@ -38,16 +38,10 @@ CREATE TABLE CATEGORIA (
 -- -----------------------------------------------------
 CREATE TABLE TUTORIAL (
   Id serial PRIMARY KEY,
-  CatNome VARCHAR(300) NOT NULL,
   Título VARCHAR(300) NOT NULL,
   Texto TEXT,
   URL VARCHAR(500) NOT NULL,
   CatId serial NOT NULL,
-  CONSTRAINT FK_CatNome
-    FOREIGN KEY (CatNome)
-    REFERENCES CATEGORIA (Nome)
-    ON DELETE RESTRICT
-    ON UPDATE CASCADE,
   CONSTRAINT FK_CatId
     FOREIGN KEY (CatId)
     REFERENCES CATEGORIA (Id)
